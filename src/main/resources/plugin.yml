@@ -1,0 +1,19 @@
+name: PrimordialDevelop
+version: '${version}'
+main: com.develop.primordial.primordialdevelop.PrimordialDevelop
+api-version: 1.17
+authors: [ downYoutube2548 ]
+depend:
+  - "MMOItems"
+  - "MMOCore"
+  - "ProtocolLib"
+  - "DevCurrency"
+  - "NBTAPI"
+  - "Vault"
+  - "LuckPerms"
+softdepend:
+  - "PlaceholderAPI"
+commands:
+  primordial:
+    permission: primordial.use
+  character:

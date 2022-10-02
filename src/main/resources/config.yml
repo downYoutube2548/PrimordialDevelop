@@ -1,0 +1,340 @@
+debug: false
+
+menus:
+  main:
+    title: "Manage Character"
+    size: 54
+    class-icon:
+      name: "&f%class-name%"
+      lore:
+        - ""
+        - "&eเลเวล &f%level%/%max_level%"
+        - ""
+        - "&f &eคลิก &7เพื่อดูรายละเอียดตัวละคร"
+    selected-class-icon:
+      slot: 23
+    buttons:
+      up:
+        name: "&r"
+        lore: []
+        slot: 9
+        type: AMETHYST_SHARD
+        model: 0
+        count: 1
+        not-available-type: BARRIER
+      down:
+        name: "&r"
+        lore: []
+        slot: 36
+        type: AMETHYST_SHARD
+        model: 0
+        count: 1
+        not-available-type: BARRIER
+      skill:
+        name: "&bSkills"
+        lore: [ ]
+        slot: 25
+        type: AMETHYST_SHARD
+        model: 5040
+        count: 1
+      upgrade:
+        name: "&eUpgrade"
+        lore: [ ]
+        slot: 34
+        type: AMETHYST_SHARD
+        model: 5039
+        count: 1
+      attr:
+        name: "&dAttribute"
+        lore: [ ]
+        slot: 43
+        type: AMETHYST_SHARD
+        model: 5046
+        count: 1
+      arrow:
+        name: "&r"
+        lore: [ ]
+        slot: 22
+        type: AMETHYST_SHARD
+        model: 5085
+        count: 1
+      select:
+        name: "&aSelect"
+        lore: [ ]
+        slot: 41
+        type: AMETHYST_SHARD
+        model: 5019
+        count: 1
+  level-upgrade:
+    title: "Upgrade Level"
+    size: 54
+    selected_upgrader:
+      slot: 22
+      lore:
+        - "&aAmount: &b%amount%"
+    selected_character:
+      slot: 10
+      name: "%character_name%"
+      lore:
+        - "&7Level: &7%level%/%max_level%"
+        - ""
+        - "&8%xp%/%max_xp%"
+        - "&f%xp_process_bar% &a%xp_percent%"
+      bar_color: "&b"
+      bar_empty_color: "&f"
+      bar_length: 20
+      bar_symbol: "|"
+      count: 1
+    xp-bar:
+
+      bar-material: LIGHT_BLUE_STAINED_GLASS_PANE
+      bar-empty-material: GRAY_STAINED_GLASS_PANE
+
+      # เรียงต่ำไปสูง
+      # "," = AND
+      # ";" = ตัวคั่น Slot ถัดไป
+      bar-slot: "53,45;44,36;35,27;26,18;17,9;8,0"
+    upgrade-not-available:
+      name: "%cause%"
+      type: BARRIER
+      count: 1
+      cause-text:
+        not-enough-money: "&cNot Enough Money"
+        not-enough-item: "&cNot Enough Item"
+    buttons:
+      upgrade_I:
+        slot: 3
+        count: 1 # <-- อย่าไปยุ่งกับมัน
+        name: "&ax100"
+        lore:
+          - "&eจำนวนที่มี: &6%amount%"
+        model: 508
+        type: PAPER
+        exp: 100
+        cost: 1000
+        item: "mmoitem:CONSUMABLE:EXP"
+      upgrade_II:
+        slot: 4
+        count: 1
+        name: "&ax500"
+        lore:
+          - "&eจำนวนที่มี: &6%amount%"
+        model: 509
+        type: PAPER
+        exp: 500
+        cost: 2000
+        item: "mmoitem:CONSUMABLE:EXP2"
+      upgrade_III:
+        slot: 5
+        count: 1
+        name: "&ax2,000"
+        lore:
+          - "&eจำนวนที่มี: &6%amount%"
+        model: 5010
+        type: PAPER
+        exp: 2000
+        cost: 3000
+        item: "mmoitem:CONSUMABLE:EXP3"
+      increase:
+        slot: 23
+        count: 1
+        name: "&aIncrease"
+        type: LIME_STAINED_GLASS_PANE
+        lore:
+          - "&c&nLeft Click&f +1"
+          - "&e&nShift+Left Click&f +10"
+          - "&a&nRight Click&f max"
+      decrease:
+        slot: 21
+        count: 1
+        name: "&cDecrease"
+        type: RED_STAINED_GLASS_PANE
+        lore:
+          - "&c&nLeft Click&f -1"
+          - "&e&nShift+Left Click&f -10"
+          - "&a&nRight Click&f set to 1"
+      confirm:
+        name: "&aConfirm"
+        slot: 40
+        type: AMETHYST_SHARD
+        model: 5019
+        count: 1
+      back:
+        name: "&cBack"
+        slot: 39
+        type: AMETHYST_SHARD
+        model: 5092
+        count: 1
+      cost:
+        name: "&6Cost: &e%cost%"
+        slot: 31
+        type: RAW_GOLD
+        count: 1
+      money-remain:
+        name: "&6Balance: &e%balance%"
+        slot: 16
+        count: 1
+        type: GOLD_INGOT
+
+  character-upgrade:
+    title: "Upgrade Character"
+    size: 54
+    current-character:
+      slot: 12
+      name: "%class-name%"
+      lore:
+        - "%max-level%"
+    upgraded-character:
+      slot: 14
+      name: "%class-name%"
+      lore:
+        - "%max-level%"
+    item-cost:
+      slot: [31,30,32,29,33,28,34]
+      lore:
+        - ""
+        - "&f%have%&f/%need%"
+      have-enough-color: "&f"
+      not-enough-color: "&c"
+    upgrade-not-available:
+      name: "%cause%"
+      type: BARRIER
+      count: 1
+      cause-text:
+        not-enough-money: "&cNot Enough Money"
+        not-enough-item: "&cNot Enough Item"
+    buttons:
+      arrow:
+        name: "&r"
+        slot: 13
+        type: AMETHYST_SHARD
+        model: 5085
+        count: 1
+      upgrade:
+        name: "&aUpgrade"
+        slot: 40
+        type: AMETHYST_SHARD
+        model: 5019
+        count: 1
+      back:
+        name: "&cBack"
+        slot: 39
+        type: AMETHYST_SHARD
+        model: 5092
+        count: 1
+      cost:
+        name: "&6Cost: &e%cost%"
+        slot: 41
+        type: RAW_GOLD
+        count: 1
+      money-remain:
+        name: "&6Balance: &e%balance%"
+        slot: 16
+        count: 1
+        type: GOLD_INGOT
+
+  character-upgrade-confirm:
+    title: "Confirm Upgrade"
+    size: 27
+    buttons:
+      confirm:
+        name: "&aConfirm"
+        slot: 14
+        type: AMETHYST_SHARD
+        model: 5019
+        count: 1
+      back:
+        name: "&cBack"
+        slot: 12
+        type: AMETHYST_SHARD
+        model: 5092
+        count: 1
+  quest:
+    title: "Daily Quest"
+    size: 54
+    buttons: {}
+
+
+characters:
+  TEST: # <-- ชื่อคลาสโดยรวม ตั้งอะไรก็ได้
+    - "TEST1" # <-- Class ID ย่อยที่ตั้งไว้ใน MMOCore/classes **ห้ามซ้ำนะ เรียงตามระดับของคลาส
+    - "TEST2"
+    - "TEST3"
+
+upgrade-cost:
+  TEST2: # <-- CLASS ID
+    # <> = จำเป็น
+    # [] = ใส่ไม่ใส่ก็ได้
+    # minecraft:<item_id>:[custom model data];<amount>
+    # mmoitem:<category>:<item_id>;<amount>
+    # balance;<cost>
+    - "minecraft:NETHER_STAR:0;5"
+    - "mmoitem:MATERIAL:DROP68;1"
+    - "mmoitem:MATERIAL:DROP25;3"
+    - "mmoitem:MATERIAL:DROP22;3"
+    - "balance;1000"
+  TEST3:
+    - "minecraft:NETHER_STAR:0;10"
+
+weapon-type:
+  TEST: weapon_type_sword # <-- เอาชื่อ weapon มาจากชื่อ Attribute ของ MMOCore
+
+default-bound-skill:
+  # <ClassGroup>: <SKILL1>:<SKILL2>:<SKILL3>:...
+  TEST: SKILL1:SKILL2:SKILL3
+
+default:
+  character: TEST
+  auto-apply-invalid-class:
+    join: true
+    run-main-command: false
+
+quest:
+  category:
+#    <category>: <-- ชื่ออะไรก็ได้
+#      - "<quest-id1>" <-- Quest ID ที่อยู่ใน MMOCore
+#      - "<quest-id2>"
+#      - "<quest-id3>"
+    kill-mob:
+      - "killMob-1"
+      - "killMob-2"
+      - "killMob-3"
+    explore:
+      - "explore-1"
+      - "explore-2"
+      - "explore-3"
+  set:
+    # 1. จะสุ่มเควสใน category ที่กำหนด ตามจำนวนที่กำหนดไว้
+    # 2. ในทุกครั้งที่รีเซ็ตเควสประจำวัน จะสุ่มว่าในครั้งนั้นผู้เล่นจะได้เควสเซ็ตไหน
+    # 3. จำนวนเควสในแต่ละวันจะขึ้นอยู่กับจำนวนที่ระบุใน amount ทั้งหมดรวมกัน นั่นหมายความว่า แต่ละวันอาจตั้งให้เควสมีไม่เท่ากันก็ได้
+    #- "<category1:<amount1>>;<category2:<amount2>>,..."
+    - "kill-mob:5;explore:2" # <-- SET 1 สุ่มเควสใน category "kill-mob" 5 เควส และเควสใน category "explore" 2 เควส
+    - "kill-mob:8" # SET 2 สุ่มเควสใน category "kill-mob" 8 เควส
+  reset:
+    enable: true
+    resets:
+      - 'Monday;00;00'
+      - 'Tuesday;00;00'
+      - 'Wednesday;00;00'
+      - 'Thursday;00;00'
+      - 'Friday;00;00'
+      - 'Saturday;00;00'
+      - 'Sunday;00;00'
+  bonus:
+    enable: true
+    values:
+      3:
+        command:
+          - ""
+      5:
+        command:
+          - ""
+      7:
+        command:
+          - ""
+
+message:
+  change-class: "&eYou have changed class to %class%"
+  upgrade-class: "&eYou have upgraded class to %class%"
+  reload-complete: "&aReloaded config!"
+  class-not-found-in-system: "&cYour class is not found in system!"
